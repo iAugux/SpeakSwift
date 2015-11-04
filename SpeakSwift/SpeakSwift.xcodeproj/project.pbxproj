@@ -13,8 +13,6 @@
 		EA01FE391943B49300A2224B /* SpeakSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01FE381943B49300A2224B /* SpeakSwiftTests.swift */; };
 		EA01FE451943B66B00A2224B /* SSMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01FE441943B66B00A2224B /* SSMainViewController.swift */; };
 		EA01FE471943B69B00A2224B /* SSRootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01FE461943B69B00A2224B /* SSRootNavigationController.swift */; };
-		EA2803FD1B13842B007240A7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2803FB1B13842B007240A7 /* Fabric.framework */; };
-		EA2803FE1B13842B007240A7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2803FC1B13842B007240A7 /* Crashlytics.framework */; };
 		EA327A941943D43C008F3BC3 /* SSDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA327A931943D43C008F3BC3 /* SSDataManager.swift */; };
 		EA327A961943D7CE008F3BC3 /* SSSpeechObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA327A951943D7CD008F3BC3 /* SSSpeechObject.swift */; };
 		EA327AC61945FD66008F3BC3 /* SSSpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA327AC51945FD66008F3BC3 /* SSSpeechManager.swift */; };
@@ -44,8 +42,6 @@
 		EA01FE381943B49300A2224B /* SpeakSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakSwiftTests.swift; sourceTree = "<group>"; };
 		EA01FE441943B66B00A2224B /* SSMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSMainViewController.swift; sourceTree = "<group>"; };
 		EA01FE461943B69B00A2224B /* SSRootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRootNavigationController.swift; sourceTree = "<group>"; };
-		EA2803FB1B13842B007240A7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
-		EA2803FC1B13842B007240A7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		EA327A931943D43C008F3BC3 /* SSDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDataManager.swift; sourceTree = "<group>"; };
 		EA327A951943D7CD008F3BC3 /* SSSpeechObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSpeechObject.swift; sourceTree = "<group>"; };
 		EA327AC51945FD66008F3BC3 /* SSSpeechManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSSpeechManager.swift; sourceTree = "<group>"; };
@@ -59,8 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA2803FE1B13842B007240A7 /* Crashlytics.framework in Frameworks */,
-				EA2803FD1B13842B007240A7 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +89,6 @@
 		EA01FE221943B49300A2224B /* SpeakSwift */ = {
 			isa = PBXGroup;
 			children = (
-				EA2803FA1B13840C007240A7 /* Libs */,
 				EA01FE291943B49300A2224B /* Main.storyboard */,
 				EA01FE2C1943B49300A2224B /* Images.xcassets */,
 				EA01FE251943B49300A2224B /* AppDelegate.swift */,
@@ -135,15 +128,6 @@
 				EA01FE371943B49300A2224B /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		EA2803FA1B13840C007240A7 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-				EA2803FB1B13842B007240A7 /* Fabric.framework */,
-				EA2803FC1B13842B007240A7 /* Crashlytics.framework */,
-			);
-			name = Libs;
 			sourceTree = "<group>";
 		};
 		EA90E6171950F57900E05D2E /* UIView Positioning Extension */ = {
@@ -200,7 +184,9 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SS;
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Appify Media";
 				TargetAttributes = {
 					EA01FE1F1943B49300A2224B = {
@@ -263,7 +249,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run <YOUR_API_KEY> <YOUR_BUILD_SECRET>";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -334,6 +320,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -406,6 +393,7 @@
 				INFOPLIST_FILE = SpeakSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appifymedia.speakswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5cad3d54-02b6-4f3c-a6e7-d674f8ff31bb";
 			};
@@ -425,6 +413,7 @@
 				INFOPLIST_FILE = SpeakSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appifymedia.speakswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0cf796c7-5d53-401c-b682-b978c7c12129";
 			};
@@ -445,6 +434,7 @@
 				INFOPLIST_FILE = SpeakSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appifymedia.beta.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -461,6 +451,7 @@
 				INFOPLIST_FILE = SpeakSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appifymedia.beta.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
